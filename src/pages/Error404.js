@@ -9,6 +9,6 @@ export class PageError404 extends PageTemplate {
                     404 PAGE CONTENT         
                 </div>
             </div>
-        </main>`
+        </main>`;
     }
 }

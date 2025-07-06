@@ -1,10 +1,11 @@
 import express from 'express';
 import { PORT } from './env.js';
 import { PageHome } from './pages/Home.js';
-import { PageError404 } from './pages/404.js';
+import { PageError404 } from './pages/Error404.js';
 import { PageMovies } from './pages/Movies.js';
 import { PageRegister } from './pages/Register.js';
 import { PageLogin } from './pages/Login.js';
+import { PageCategories } from './pages/Categoroies.js';
 
 const app = express();
 
@@ -19,7 +20,7 @@ app.get('/movies', (req, res) => {
 });
 
 app.get('/categories', (req, res) => {
-    return res.send(new PageHome().render());
+    return res.send(new PageCategories().render());
 });
 
 app.get('/login', (req, res) => {
