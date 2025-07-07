@@ -4,7 +4,6 @@ export function categoriesListSection(data) {
     for (const item of data) {
         HTML += `
                 <div class="feature col my-5"> 
-
                     <h3 class="fs-2 text-body-emphasis">${item.title}</h3> 
                     <p>${item.description}</p> 
                     <p>Movies count: ${item.moviesCount}</p> 

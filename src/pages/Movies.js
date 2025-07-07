@@ -1,4 +1,6 @@
+import { moviesData } from "../data/moviesData.js";
 import { PageTemplate } from "../templates/PageTemplate.js"
+import { moviesListSection } from "../ui/moviesList.js";
 import { pageTitle } from "../ui/pageTitle.js";
 import { placeholder } from "../ui/placeholder.js";
 
@@ -14,6 +16,8 @@ export class PageMovies extends PageTemplate {
             'pagal kategorija',
             'ivertinimas',
         ])}
+    
+            ${moviesListSection(moviesData)}
                 ${placeholder('Movie list', [
             'korteliu sarasas:',
             'nuotrauka',
