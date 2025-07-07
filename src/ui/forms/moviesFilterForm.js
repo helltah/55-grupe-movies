@@ -1,4 +1,6 @@
-<div class="container mb-5">    
+export function moviesFilterForm() {
+    return `
+       <div class="container mb-5">    
             <form class="row">  
                 <div class="col-12 col-xl-6"> 
                     <label for="title" class="form-label">Pavadinimas 2</label> 
@@ -36,3 +38,5 @@
                 </div>
             </form>
         </div>
+      `;
+}
