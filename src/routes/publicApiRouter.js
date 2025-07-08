@@ -1,5 +1,5 @@
 import express from 'express';
-import { postRegister } from '../public/postRegister.js';
+import { postRegister } from '../api/public/postRegister.js';
 
 export const publicApiRouter = express.Router();
 
