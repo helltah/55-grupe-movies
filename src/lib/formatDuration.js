@@ -22,4 +22,3 @@ export function formatDuration(minutes  = 100) {
    
    return hourText + (hourText && minText ? ' ' : '') + minText;
 }
-console.log(formatDuration());
