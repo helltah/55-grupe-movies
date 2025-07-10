@@ -1,4 +1,4 @@
-export function herosection(){
+export function heroSection(){
 
     return `
 <div class="container col-xxl-8 px-4 py-5">

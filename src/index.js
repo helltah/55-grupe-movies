@@ -1,9 +1,8 @@
 import express from 'express';
 import { PORT } from './env.js';
-import { PageError404 } from './pages/Error404.js';
 import { publicRouter } from './routes/publicRouter.js';
+import { PageError404 } from './pages/public/Error404.js';
 import { publicApiRouter } from './routes/publicApiRouter.js';
-
 const app = express();
 
 app.use(express.static('public'));

@@ -8,6 +8,3 @@ export function hash(text) {
     }
 }
 
-
-
-console.log(hash('password').slice(0, 2));
