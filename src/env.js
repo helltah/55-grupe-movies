@@ -1,4 +1,4 @@
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
 const argList = process.argv.slice(2);
 const args = {};
@@ -9,13 +9,14 @@ for (const str of argList) {
     if (key && value && key.startsWith('--')) {
         args[key.slice(2)] = value;
     }
-    
 }
- dotenv.config({
+
+dotenv.config({
     path: 'src/.env.' + args.env,
     quiet: true,
 });
 
+export const NODE_ENV = process.env.NODE_ENV ?? 'dev';
 export const PORT = +process.env.PORT ?? 5517;
 export const TITLE = process.env.TITLE ?? 'Project title';
 export const DB_HOST = process.env.DB_HOST ?? 'localhost';

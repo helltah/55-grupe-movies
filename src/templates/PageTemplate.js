@@ -27,10 +27,11 @@ export class PageTemplate {
 
         for (const link of commonHeaderMenuData) {
             HTML += `
-            <li>
-                <a href="${link.href}" class="nav-link px-2">${link.text}</a>
-            </li>`
+                <li>
+                    <a href="${link.href}" class="nav-link px-2">${link.text}</a>
+                </li>`;
         }
+
         return `
             <div class="container">
                 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
@@ -42,26 +43,27 @@ export class PageTemplate {
                             </svg>
                         </a>
                     </div>
-                   <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">${HTML}</ul>
-                    <div class="col-md-3 text-end">
-                        <a href="login" class="btn btn-outline-primary me-2">Login</a>
-                        <a href="register" class="btn btn-primary">Register</a>
-                    </div>
+                    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">${HTML}</ul>
+                    ${this.userMenu()}
                 </header>
             </div>`;
     }
 
-    headerMenu(data) {
-        let HTML = '';
+    userMenu() {
+        console.log(this);
 
-        for (const link of data) {
-            HTML += `
-                <li>
-                    <a href="${link.href}" class="nav-link px-2">${link.text}</a>
-                </li>`;
+        if (this.req.user.isLoggedIn) {
+            return `
+                <div class="col-md-3 text-end">
+                    <a href="/admin" class="btn btn-primary">Dashboard</a>
+                </div>`;
         }
 
-        return `<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">${HTML}</ul>`;
+        return `
+            <div class="col-md-3 text-end">
+                <a href="/login" class="btn btn-outline-primary me-2">Login</a>
+                <a href="/register" class="btn btn-primary">Register</a>
+            </div>`;
     }
 
     footer() {
@@ -69,16 +71,18 @@ export class PageTemplate {
 
         for (const link of commonHeaderMenuData) {
             HTML += `
-            <li class="nav=item">
-                <a href="${link.href}" class="nav-link px-2 text-body-secondary">${link.text}</a>`
+                <li class="nav-item">
+                    <a href="${link.href}" class="nav-link px-2 text-body-secondary">${link.text}</a>
+                </li>`;
         }
+
         return `
-        <div class="container">
-             <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"> 
-                <p class="col-md-4 mb-0 text-body-secondary">&copy; 2025 Company, Inc</p>  
-                <ul class="nav col-md-4 justify-content-end">${HTML}</ul> 
-            </footer> 
-         </div>`;
+            <div class="container">
+                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                    <p class="col-md-4 mb-0 text-body-secondary">&copy; 2025 Company, Inc</p>
+                    <ul class="nav col-md-4 justify-content-end">${HTML}</ul>
+                </footer>
+            </div>`;
     }
 
     script() {
@@ -91,13 +95,13 @@ export class PageTemplate {
 
     main() {
         return `
-        <main>
-            <div>
-                <div class="col-12">
-                    TEMPLATE PAGE CONTENT         
+            <main class="container">
+                <div class="row">
+                    <div class="col-12">
+                        TEMPLATE PAGE CONTENT
+                    </div>
                 </div>
-            </div>
-        </main>`;
+            </main>`;
     }
 
     render() {
