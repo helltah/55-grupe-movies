@@ -6,8 +6,8 @@ export class PageError404 extends PageTemplate {
     }
     main() {
         return `
-        <main>
-            <div>
+        <main="container">
+            <div="row">
                 <div class="col-12">
                     404 PAGE CONTENT         
                 </div>
