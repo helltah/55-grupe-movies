@@ -17,6 +17,10 @@ if (formDOM) {
             status: 'draft',
         };
 
+        if(descriptionDOM.value){
+            data.description = descriptionDOM.value;
+        }
+
         if(statusPublishedDOM.cheked) {
             data.status = 'published';
         }
