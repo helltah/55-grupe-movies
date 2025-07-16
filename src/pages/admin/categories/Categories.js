@@ -16,7 +16,7 @@ export class PageAdminCategories extends AdminTemplate {
                 title: 'Crime',
                 url: 'crime',
                 description: 'Lorem ipsum...',
-                isPublished: true,
+                isPublished: false,
                 moviesCount: 0,
             }, {
                 id: 3,
@@ -32,14 +32,14 @@ export class PageAdminCategories extends AdminTemplate {
             <main>
                <div class="container">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-12">
                             <h1 class="display-5">All categories</h1>
                         </div>
                     </div>
                 </div>
                <div class="container">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-12">
                             ${tableCategories(data)}
                         </div>
                     </div>
