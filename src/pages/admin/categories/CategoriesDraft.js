@@ -16,7 +16,7 @@ export class PageAdminCategoriesDraft extends AdminTemplate {
                 title: 'Crime',
                 url: 'crime',
                 description: 'Lorem ipsum...',
-                isPublished: true,
+                isPublished: false,
                 moviesCount: 0,
             }, {
                 id: 3,
@@ -28,22 +28,22 @@ export class PageAdminCategoriesDraft extends AdminTemplate {
             }
         ];
 
-            return `
-                <main>
-                   <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <h1 class="display-5">Draft categories</h1>
-                            </div>
+        return `
+            <main>
+               <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="display-5">Draft categories</h1>
                         </div>
                     </div>
-                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                ${tableCategories(data)}
-                                            </div>
-                                        </div>
-                                    </div>
-                </main>`;
-        }
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            ${tableCategories(data)}
+                        </div>
+                    </div>
+                </div>
+            </main>`;
     }
+}

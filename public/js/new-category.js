@@ -1,5 +1,4 @@
 const formDOM = document.forms[0];
-
 const titleDOM = document.getElementById('title');
 const urlDOM = document.getElementById('url');
 const descriptionDOM = document.getElementById('description');
@@ -13,15 +12,11 @@ if (formDOM) {
         const data = {
             title: titleDOM.value,
             url: urlDOM.value,
-            description: descriptionDOM.value,
+            description: descriptionDOM.value,  // ?????????????????? 👀👀👀👀
             status: 'draft',
         };
 
-        if(descriptionDOM.value){
-            data.description = descriptionDOM.value;
-        }
-
-        if(statusPublishedDOM.cheked) {
+        if (statusPublishedDOM.checked) {
             data.status = 'published';
         }
 

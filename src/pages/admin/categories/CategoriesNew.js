@@ -3,20 +3,20 @@ import { AdminTemplate } from "../../../templates/AdminTemplate.js";
 export class PageAdminCategoriesNew extends AdminTemplate {
     constructor(req) {
         super(req);
-        this.pageJS = 'new-category'
+        this.pageJS = 'new-category';
     }
 
     main() {
-            return `
-                <main>
-                   <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <h1 class="display-5">New categorie</h1>
-                            </div>
+        return `
+            <main>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="display-5">New category</h1>
                         </div>
                     </div>
-                    <div class="container">
+                </div>
+                <div class="container">
                     <div class="row">
                         <form class="col-12 col-md-9 col-lg-6">
                             <div class="mb-3">
@@ -49,4 +49,3 @@ export class PageAdminCategoriesNew extends AdminTemplate {
             </main>`;
     }
 }
-        
