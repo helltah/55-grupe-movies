@@ -8,7 +8,7 @@ const statusDraftDOM = document.getElementById('status_draft');
 if (formDOM) {
     formDOM.addEventListener('submit', (e) => {
         e.preventDefault();
-
+S
         const data = {
             title: titleDOM.value,
             url: urlDOM.value,

@@ -1,4 +1,4 @@
-export  function tableCategories(data) {
+export function tableCategories(data) {
     let HTML = '';
     let nr = 1;
 
@@ -11,8 +11,8 @@ export  function tableCategories(data) {
                 <td>${category.description}</td>
                 <td>${category.moviesCount}</td>
                 <td>${category.statusName === 'published'
-                    ? '<span class="badge text-bg-success">Published</span>' 
-                    : '<span class="badge text-bg-warning">Draft</span>'}</td>
+                ? '<span class="badge text-bg-success">Published</span>'
+                : '<span class="badge text-bg-warning">Draft</span>'}</td>
                 <td>
                     <a class="btn btn-primary btn-sm" href="/admin/categories/${category.url_slug}/edit">Edit</a>
                     <button class="btn btn-danger btn-sm">Delete</button>
