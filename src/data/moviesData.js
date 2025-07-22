@@ -1,19 +1,20 @@
 export const moviesData = [
     {
         title: 'Matrix',
-        url: '/Matrix',
+        url_slug: 'matrix',
         description: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        durationMinutes: 100,
+        durationInMinutes: 100,
         category: 'action',
         img:'/img/hero.png',
         releaseDate:'2000-02-03',
         rating: 1,
+        status: 'draft'
     },
     {
         title: 'Matrix',
-        url: '/Matrix',
+        url: ' matrix',
         description: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        durationMinutes: 100,
+        durationInMinutes: 100,
         category: 'action',
         img:'/img/hero.png',
         releaseDate:'2000-02-03',
@@ -21,9 +22,9 @@ export const moviesData = [
     },
     {
         title: 'Matrix',
-        url: '/Matrix',
+        url: 'matrix',
         description: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        durationMinutes: 100,
+        durationInMinutes: 100,
         category: 'action',
         img:'/img/hero.png',
         releaseDate:'2000-02-03',
@@ -31,9 +32,9 @@ export const moviesData = [
     },
     {
         title: 'Matrix',
-        url: '/Matrix',
+        url: 'matrix',
         description: 'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        durationMinutes: 100,
+        durationInMinutes: 100,
         category: 'action',
         img:'/img/hero.png',
         releaseDate:'2000-02-03',

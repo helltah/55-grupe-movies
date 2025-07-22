@@ -1,8 +1,12 @@
+import { moviesData } from "../../../data/moviesData.js";
 import { AdminTemplate } from "../../../templates/AdminTemplate.js";
+import { tableMovies } from "../../../ui/tables/tableMovies.js";
 
 export class PageAdminMoviesPublished extends AdminTemplate {
-    main() {
-            return `
+   async main() {
+             const data = moviesData     ;
+                        
+             return `
                 <main>
                    <div class="container">
                         <div class="row">
@@ -11,6 +15,13 @@ export class PageAdminMoviesPublished extends AdminTemplate {
                             </div>
                         </div>
                     </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                ${tableMovies(data)}
+                            </div>
+                        </div>
+                    </div>
                 </main>`;
         }
-    }
+}
