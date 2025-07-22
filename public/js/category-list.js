@@ -9,7 +9,9 @@ for (const btnDOM of deleteButtonsDom) {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            if (data.status === 'success') {
+                btnDOM.closest('tr').remove();
+            }
         })
         .catch(console.error);
     });
