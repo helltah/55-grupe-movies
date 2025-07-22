@@ -2,10 +2,6 @@ import { connection } from "../../db.js";
 import { IsValid } from "../../lib/IsValid.js";
 
 export async function postCategories(req, res) {
-   
-   console.log(req.user);
-   
-
     const [err, msg] = IsValid.fields(req.body, {
         title: 'nonEmptyString',
         url: 'nonEmptyString',
@@ -22,7 +18,7 @@ export async function postCategories(req, res) {
     }
 
     const { title, url, status, description } = req.body;
-    
+
     try {
         const sql = `SELECT * FROM categories WHERE title = ? OR url_slug = ?;`;
         const [response] = await connection.execute(sql, [title, url]);

@@ -4,7 +4,7 @@ import { AdminTemplate } from "../../../templates/AdminTemplate.js";
 export class PageAdminCategoriesEdit extends AdminTemplate {
     constructor(req) {
         super(req);
-        this.pageJS = 'new-category';
+        this.pageJS = 'edit-category';
     }
 
     async main() {

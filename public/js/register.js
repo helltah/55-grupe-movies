@@ -1,4 +1,3 @@
-
 const formDOM = document.forms[0];
 const usernameDOM = document.getElementById('username');
 const emailDOM = document.getElementById('email');
