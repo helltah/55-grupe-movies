@@ -1,5 +1,6 @@
 const formDOM = document.forms[0];
 const titleDOM = document.getElementById('title');
+const originalUrlDOM = document.getElementById('original_url');
 const urlDOM = document.getElementById('url');
 const descriptionDOM = document.getElementById('description');
 const statusPublishedDOM = document.getElementById('status_published');
@@ -9,20 +10,22 @@ if (formDOM) {
     formDOM.addEventListener('submit', (e) => {
         e.preventDefault();
 
-
         const data = {
             title: titleDOM.value,
             url: urlDOM.value,
-            description: descriptionDOM.value,  // ?????????????????? 👀👀👀👀
             status: 'draft',
         };
+
+        if (descriptionDOM.value) {
+            data.description = descriptionDOM.value;
+        }
 
         if (statusPublishedDOM.checked) {
             data.status = 'published';
         }
 
-        fetch('/api/admin/categories', {
-            method: 'POST',
+        fetch('/api/admin/categories/' + originalUrlDOM.value, {
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
