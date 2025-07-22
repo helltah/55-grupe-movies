@@ -5,7 +5,7 @@ export class PageHome extends PageTemplate {
     constructor(req) {
         super(req);
     }
-    main() {
+  async  main() {
         return `
             <main>
                 ${heroSection()}
