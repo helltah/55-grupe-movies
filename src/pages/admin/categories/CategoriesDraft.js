@@ -12,8 +12,6 @@ export  class PageAdminCategoriesDraft extends AdminTemplate {
        
           const data = await getDraftCategories();
 
-          
-          
             return `
                 <main>
                    <div class="container">

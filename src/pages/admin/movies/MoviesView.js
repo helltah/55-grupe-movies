@@ -1,14 +1,26 @@
-import { moviesData } from "../../../data/moviesData.js";
-import { getCategoryByUrlSlug } from "../../../db/admin/getCategoryByUrlSlug.js";
+import { getMovieByUrlSlug } from "../../../db/admin/getMovieByUrlSlug.js";
+import { formatDate } from "../../../lib/formatDate.js";
 import { formatDuration } from "../../../lib/formatDuration.js";
+import { formatRating } from "../../../lib/formatRating.js";
 import { AdminTemplate } from "../../../templates/AdminTemplate.js";
 
 export class PageAdminMoviesView extends AdminTemplate {
     async main() {
-        //const data = await getCategoryByUrlSlug(this.req.params.urlSlug);
-        //const category = data[0];
+        const data = await getMovieByUrlSlug(this.req.params.urlSlug);
+        const movie = data[0];
 
-        const movie = moviesData[0];
+        if (!movie) {
+            return `
+                <main>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="display-5">Movie not found</h1>
+                            </div>
+                        </div>
+                    </div>
+                </main>`;
+        }
 
         return `
             <main>
@@ -27,7 +39,7 @@ export class PageAdminMoviesView extends AdminTemplate {
                                     <tr class="mb-3">
                                         <td>Thumbnail</td>
                                         <td>
-                                            <img style="max-height: 5rem" src="${movie.img}" alt="Movie thumbnail">
+                                            <img style="max-height: 5rem;" src="${movie.img}" alt="Movie thumbnail">
                                             <p>${movie.img}</p>
                                         </td>
                                     </tr>
@@ -49,22 +61,22 @@ export class PageAdminMoviesView extends AdminTemplate {
                                     </tr>
                                     <tr class="mb-3">
                                         <td>Category</td>
-                                        <td>${movie.category}</td>
+                                        <td>${movie.categoryName}</td>
                                     </tr>
                                     <tr class="mb-3">
                                         <td>Release date</td>
-                                        <td>${movie.releaseDate}</td>
+                                        <td>${formatDate(movie.release_date)}</td>
                                     </tr>
                                     <tr class="mb-3">
                                         <td>Rating</td>
-                                        <td>${movie.rating} ⭐</td>
+                                        <td>${formatRating(movie.rating)}</td>
                                     </tr>
                                     <tr class="mb-3">
                                         <td>Status</td>
                                         <td>${movie.status === 'published'
-                                            ? '<span class="badge text-bg-success">Published</span>'
-                                            : '<span class="badge text-bg-warning">Draft</span>'}
-                                            </td>
+                ? '<span class="badge text-bg-success">Published</span>'
+                : '<span class="badge text-bg-warning">Draft</span>'
+            }</td>
                                     </tr>
                                 </tbody>
                             </table>
