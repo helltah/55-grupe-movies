@@ -13,5 +13,5 @@ adminApiRouter.put('/categories/:original_url', putCategories);
 adminApiRouter.delete('/categories/:url', deleteCategories);
 
 adminApiRouter.post('/movies', postMovies);
-adminApiRouter.delete('/movies/:original_url', putMovies);
+adminApiRouter.put('/movies/:original_url', putMovies);
 adminApiRouter.delete('/movies/:url', deleteMovies);
